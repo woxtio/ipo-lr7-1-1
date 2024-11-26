@@ -4,22 +4,21 @@ with open("fishs.json", 'r', encoding='utf-8') as file:
 a = 0 
 while True:
     print("""
-       1.Вывести все записи 
-       2.Вывести запись по полю 
-       3.Добавить запись 
-       4.Удалить запись по полю 
-       5.Выйти из программы
+1.Вывести все записи 
+2.Вывести запись по полю 
+3.Добавить запись 
+4.Удалить запись по полю 
+5.Выйти из программы
     """)
     num = int(input("Введите номер действия: "))
     if num == 1:
         for fish in data:
             print(f"""
-            Номер записи: {fish['id']}, 
-            Общее название: {fish['name']},                       
-            Латинское название: {fish['latin_name']}, 
-            Пресноводная: {fish['is_salt_water_fish']},    
-            Кол-во подвидов: {fish['sub_type_count']} 
-            """)
+Номер записи: {fish['id']}, 
+Общее название: {fish['name']},                       
+Латинское название: {fish['latin_name']}, 
+Пресноводная: {fish['is_salt_water_fish']},    
+Кол-во подвидов: {fish['sub_type_count']} """)
         a += 1
     elif num == 2:
         id = int(input("Введите номер рыбы: "))
@@ -27,11 +26,11 @@ while True:
         for fish in data:
             if id == fish['id']:
                 print(f"""
-                Номер записи: {fish['id']}, 
-                Общее название: {fish['name']},                       
-                Латинское название: {fish['latin_name']}, 
-                Пресноводная: {fish['is_salt_water_fish']},    
-                Количество подвидов: {fish['sub_type_count']} 
+Номер записи: {fish['id']}, 
+Общее название: {fish['name']},                       
+Латинское название: {fish['latin_name']}, 
+Пресноводная: {fish['is_salt_water_fish']},    
+Количество подвидов: {fish['sub_type_count']} 
                 """)
                 find = True  
                 break  
@@ -40,7 +39,7 @@ while True:
             print("Запись не найдена")
     elif num == 3:
         id = int(input("Введите id рыбы: "))
-        vyxodi = False
+        exists = False
         for fish in data:
             if fish['id'] == id:
                 exists = True
@@ -85,7 +84,7 @@ while True:
         a += 1
     elif num == 5:
         print(f"""Программа завершена
-               Количество операций: {a}""") 
+Количество операций: {a}""") 
         break
     else:
         print("Этот номер отсутствует")
